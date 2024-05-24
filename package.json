@@ -12,11 +12,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@wdio/cli": "^8.6.7",
-    "@wdio/devtools-service": "^6.3.0",
-    "@wdio/local-runner": "^8.6.7",
-    "@wdio/mocha-framework": "^8.6.6",
-    "@wdio/spec-reporter": "^8.6.6",
+    "@wdio/local-runner": "^8.38.0",
+    "@wdio/mocha-framework": "^8.38.0",
+    "@wdio/spec-reporter": "^8.38.0",
     "eslint": "^8.38.0",
     "eslint-plugin-mocha": "^10.1.0",
     "eslint-plugin-wdio": "^8.0.14",
@@ -24,5 +22,9 @@
     "wdio-eslinter-service": "^0.0.4",
     "wdio-geckodriver-service": "^5.0.2",
     "wdio-intercept-service": "4.0.0"
+  },
+  "dependencies": {
+    "@wdio/cli": "^8.38.0",
+    "@wdio/devtools-service": "^8.38.0"
   }
 }

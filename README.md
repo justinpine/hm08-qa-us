@@ -1,4 +1,4 @@
-# Sprint 8 Project 8 - Urban Routes Automation Project
+# Project 8 - Urban Routes Automation Project
 
 ## Project Description
 
