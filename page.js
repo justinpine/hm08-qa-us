@@ -4,13 +4,35 @@ module.exports = {
     toField: '#to',
     phoneNumberField: '#phone',
     codeField: '#code',
+    cardNumber: '#number',
+    cardCode: '.card-second-row #code',
+    messageField: '#comment',
+    // Checkboxes
+    blanketAndHandkerchiefsCheckbox: '.switch-input',
+    blanketAndHandkerchiefsState: '.sw-label',
     // Buttons
     callATaxiButton: 'button=Call a taxi',
     phoneNumberButton: '//div[starts-with(text(), "Phone number")]',
     nextButton: 'button=Next',
     confirmButton: 'button=Confirm',
+    supportivePlanButton: 'div=Supportive',
+    paymentMethodButton: '.pp-text',
+    addCardButton: 'div=Add card',
+    linkCardButton: 'button=Link',
+    closePaymentMethodModalButton: '//*[contains(@class, "payment-pick")]//*[contains(@class, "close-button")]',
+    carSearchButton: 'button.smart-button',
+    // Ice cream counter
+    iceCreamField: '.counter-value',
+    iceCreamPlusButton: '.counter-plus',
+    iceCreamMinusButton: '.counter-minus',
     // Modals
     phoneNumberModal: '.modal',
+    carSearchModal: '.order-body',
+    // Driver Info
+    driverInfo: '.order-header',
+    driverName: '.order-btn-group',
+    // Misc
+    cardSignatureStrip: '.plc',
     // Functions
     fillAddresses: async function(from, to) {
         const fromField = await $(this.fromField);
@@ -48,4 +70,22 @@ module.exports = {
         await codeField.setValue(code)
         await $(this.confirmButton).click()
     },
+    // Adding 'orderItems' function here for reusability
+    orderItems: async function() {
+        console.log('Attempting to find blanket and handkerchiefs checkbox...');
+        const blanketAndHandkerchiefsCheckbox = await $(this.blanketAndHandkerchiefsCheckbox);
+        const isDisplayed = await blanketAndHandkerchiefsCheckbox.isDisplayed();
+        console.log('Checkbox displayed:', isDisplayed);
+        if (isDisplayed) {
+            await blanketAndHandkerchiefsCheckbox.waitForClickable();
+            await blanketAndHandkerchiefsCheckbox.click();
+            console.log('Attempting to verify state change...');
+            const blanketAndHandkerchiefsState = await $(this.blanketAndHandkerchiefsState);
+            await blanketAndHandkerchiefsState.waitForDisplayed();
+            await expect(blanketAndHandkerchiefsState).toHaveElementClassContaining('checked');
+            console.log('State change verified.');
+        } else {
+            console.log('Checkbox not displayed within timeout.');
+        }
+    }
 };
