@@ -29,7 +29,7 @@ module.exports = {
     phoneNumberModal: '.modal',
     carSearchModal: '.order-body',
     // Driver Info
-    driverInfo: '.order-header-content',
+    driverInfo: '.order-header',
     driverName: '.order-btn-group',
     // Misc
     cardSignatureStrip: '.plc',

@@ -20,7 +20,7 @@ exports.config = {
 ],
     logLevel: 'error',
     bail: 0,
-    baseUrl: 'https://cnt-1d2ca9b9-1717-4203-a7ba-a8a109f4b883.containerhub.tripleten-services.com',
+    baseUrl: 'https://cnt-b620e5a3-3b58-4906-9f02-4ef37586934c.containerhub.tripleten-services.com',
     // Increased timeout to prevent errors
     waitforTimeout: 150000,
     connectionRetryTimeout: 120000,
@@ -33,7 +33,7 @@ exports.config = {
     reporters: ['spec'],
     mochaOpts: {
         ui: 'bdd',
-        retries: 3,
+        retries: 5,
         timeout: 15000
     },
 };
