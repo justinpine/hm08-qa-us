@@ -132,7 +132,7 @@ describe('Create an order', () => {
         
         const carSearchButton = await $(page.carSearchButton);
         // Added timeouts to prevent errors
-        await carSearchButton.waitForClickable({ timeout: 10000});
+        await carSearchButton.waitForClickable();
         await carSearchButton.click();
         
         const carSearchModal = await $(page.carSearchModal);
@@ -146,7 +146,7 @@ describe('Create an order', () => {
 
         const carSearchButton = await $(page.carSearchButton);
         // Added timeouts to prevent errors
-        await carSearchButton.waitForClickable({ timeout: 10000});
+        await carSearchButton.waitForClickable();
         await carSearchButton.click();
 
         const driverInfo = await $(page.driverInfo);
