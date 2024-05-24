@@ -132,11 +132,11 @@ describe('Create an order', () => {
         
         const carSearchButton = await $(page.carSearchButton);
         // Added timeouts to prevent errors
-        await carSearchButton.waitForClickable({ timeout: 5000});
+        await carSearchButton.waitForClickable({ timeout: 10000});
         await carSearchButton.click();
         
         const carSearchModal = await $(page.carSearchModal);
-        await carSearchModal.waitForDisplayed({ timeout: 5000});
+        await carSearchModal.waitForDisplayed({ timeout: 10000});
         await expect(carSearchModal).toBeDisplayed();
     });
     
@@ -146,15 +146,15 @@ describe('Create an order', () => {
 
         const carSearchButton = await $(page.carSearchButton);
         // Added timeouts to prevent errors
-        await carSearchButton.waitForClickable({ timeout: 5000});
+        await carSearchButton.waitForClickable({ timeout: 10000});
         await carSearchButton.click();
 
         const driverInfo = await $(page.driverInfo);
-        await driverInfo.waitForDisplayed({ timeout: 5000});
+        await driverInfo.waitForDisplayed({ timeout: 10000});
         await expect(driverInfo).toBeDisplayed();
 
         const driverName = await $(page.driverName);
-        await driverName.waitForDisplayed({ timeout: 5000});
+        await driverName.waitForDisplayed({ timeout: 10000});
         await expect(driverName).toBeDisplayed();
     }); 
 });

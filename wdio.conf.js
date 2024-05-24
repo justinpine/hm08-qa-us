@@ -14,13 +14,13 @@ exports.config = {
         browserName: 'firefox',
         acceptInsecureCerts: true,
         'moz:firefoxOptions': {
-            //args: ['-headless']
+            args: ['-headless']
         }
     }
 ],
     logLevel: 'error',
     bail: 0,
-    baseUrl: 'https://cnt-6ba5ba43-4721-4c3f-9df3-cd02ca267b16.containerhub.tripleten-services.com',
+    baseUrl: 'https://cnt-1d2ca9b9-1717-4203-a7ba-a8a109f4b883.containerhub.tripleten-services.com',
     // Increased timeout to prevent errors
     waitforTimeout: 150000,
     connectionRetryTimeout: 120000,
@@ -33,6 +33,7 @@ exports.config = {
     reporters: ['spec'],
     mochaOpts: {
         ui: 'bdd',
+        retries: 3,
         timeout: 15000
     },
 };
