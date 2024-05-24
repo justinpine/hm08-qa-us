@@ -31,7 +31,6 @@ exports.config = {
     ],
     framework: 'mocha',
     reporters: ['spec'],
-    waitforTimeout: 10000,
     mochaOpts: {
         ui: 'bdd',
         timeout: 15000
