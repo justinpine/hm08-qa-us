@@ -70,22 +70,4 @@ module.exports = {
         await codeField.setValue(code)
         await $(this.confirmButton).click()
     },
-    // Adding 'orderItems' function here for reusability
-    orderItems: async function() {
-        console.log('Attempting to find blanket and handkerchiefs checkbox...');
-        const blanketAndHandkerchiefsCheckbox = await $(this.blanketAndHandkerchiefsCheckbox);
-        const isDisplayed = await blanketAndHandkerchiefsCheckbox.isDisplayed();
-        console.log('Checkbox displayed:', isDisplayed);
-        if (isDisplayed) {
-            await blanketAndHandkerchiefsCheckbox.waitForClickable();
-            await blanketAndHandkerchiefsCheckbox.click();
-            console.log('Attempting to verify state change...');
-            const blanketAndHandkerchiefsState = await $(this.blanketAndHandkerchiefsState);
-            await blanketAndHandkerchiefsState.waitForDisplayed();
-            await expect(blanketAndHandkerchiefsState).toHaveElementClassContaining('checked');
-            console.log('State change verified.');
-        } else {
-            console.log('Checkbox not displayed within timeout.');
-        }
-    }
 };
